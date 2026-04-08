@@ -1,0 +1,138 @@
+.relatedproducts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 80px 0px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading Animation */
+.relatedproducts h1 {
+  color: #333;
+  font-size: 42px;
+  font-weight: 800;
+  animation: fadeInDown 0.8s ease;
+  margin-bottom: 10px;
+}
+
+.relatedproducts hr {
+  width: 150px;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff6b6b, #ff8787);
+  border: none;
+  animation: slideIn 0.8s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+  margin-bottom: 30px;
+}
+
+/* Product Container */
+.relatedproducts-item {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  animation: fadeUp 0.8s ease;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* Hover Animation */
+.relatedproducts-item > * {
+  transition: all 0.3s ease;
+}
+
+.relatedproducts-item > *:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+}
+
+
+/* ---------- Animations ---------- */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ---------- Media Queries ---------- */
+
+/* Laptop */
+@media(max-width: 1280px){
+  .relatedproducts-item{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .relatedproducts h1{
+    font-size: 35px;
+  }
+}
+
+/* Tablet */
+@media(max-width: 1024px){
+  .relatedproducts-item{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .relatedproducts h1{
+    font-size: 30px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 768px){
+  .relatedproducts{
+    margin: 60px 10px;
+  }
+
+  .relatedproducts-item{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .relatedproducts h1{
+    font-size: 26px;
+  }
+}
+
+/* Small Mobile */
+@media(max-width: 480px){
+  .relatedproducts-item{
+    grid-template-columns: 1fr;
+  }
+
+  .relatedproducts h1{
+    font-size: 22px;
+  }
+}

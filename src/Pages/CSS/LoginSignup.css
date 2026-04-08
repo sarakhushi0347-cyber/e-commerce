@@ -1,0 +1,144 @@
+.loginsignup{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container */
+.loginsignup-container{
+    width: 420px;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loginsignup-container h1{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Input Fields */
+.loginsignup-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loginsignup-fields input{
+    height: 50px;
+    padding-left: 15px;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.loginsignup-fields input:focus{
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106,17,203,0.3);
+}
+
+/* Button */
+.loginsignup-container button{
+    margin-top: 25px;
+    height: 50px;
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.loginsignup-container button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Login Text */
+.loginsignup-login{
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.loginsignup-login span{
+    color: #6a11cb;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.loginsignup-login span:hover{
+    text-decoration: underline;
+}
+
+/* Checkbox */
+.loginsignup-agree{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.loginsignup-agree input{
+    cursor: pointer;
+}
+
+.loginsignup-agree p{
+    font-size: 14px;
+    color: #666;
+}
+
+/* Tablet */
+@media(max-width:768px){
+    .loginsignup-container{
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+/* Mobile */
+@media(max-width:480px){
+    .loginsignup-container{
+        padding: 25px 20px;
+    }
+
+    .loginsignup-container h1{
+        font-size: 24px;
+    }
+
+    .loginsignup-fields input{
+        height: 45px;
+    }
+
+    .loginsignup-container button{
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .loginsignup-agree{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

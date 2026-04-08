@@ -1,0 +1,159 @@
+.new-collections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 20px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  animation: fadeIn 1s ease-in-out;
+  margin-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-collections::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.15), transparent);
+  border-radius: 50%;
+}
+
+/* Title */
+.new-collections h1 {
+  color: #333;
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  animation: slideDown 0.8s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Line */
+.new-collections hr {
+  width: 150px;
+  height: 5px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff6b6b, #ff8787);
+  margin-bottom: 20px;
+  animation: slideLine 0.8s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+}
+
+/* Products Grid */
+.collections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1300px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Card Animation */
+.collections > * {
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  animation: cardFade 0.6s ease forwards;
+}
+
+.collections > *:nth-child(1) { animation-delay: 0.1s }
+.collections > *:nth-child(2) { animation-delay: 0.2s }
+.collections > *:nth-child(3) { animation-delay: 0.3s }
+.collections > *:nth-child(4) { animation-delay: 0.4s }
+.collections > *:nth-child(5) { animation-delay: 0.5s }
+.collections > *:nth-child(6) { animation-delay: 0.6s }
+.collections > *:nth-child(7) { animation-delay: 0.7s }
+.collections > *:nth-child(8) { animation-delay: 0.8s }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 150px;
+    opacity: 1;
+  }
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .collections {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .new-collections h1 {
+    font-size: 36px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .collections {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .new-collections h1 {
+    font-size: 32px;
+  }
+
+  .new-collections {
+    padding: 40px 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .collections {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .new-collections {
+    padding: 40px 15px;
+  }
+
+  .new-collections h1 {
+    font-size: 26px;
+  }
+}
