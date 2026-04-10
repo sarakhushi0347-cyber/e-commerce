@@ -8,32 +8,43 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop")
+  const [toggle, setToggle] = useState(false)
+
   const {getTotalCartItems} = useContext(ShopContext);
 
   return (
     <div className="navbar">
+      
       <div className="nav-logo">
         <img src={logo} alt="Logo" />
         <p>SHOPPER</p>
       </div>
-      <ul className='nav-menu'>
-        <li onClick={()=>{setMenu("shop")}}>
-          <Link style={{textDecoration: "none"}} to="/">Shop</Link>
+
+      {/* Toggle Button */}
+      <div className={`nav-toggle ${toggle ? "open" : ""}`} onClick={()=>setToggle(!toggle)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul className={`nav-menu ${toggle ? "active" : ""}`}>
+        <li onClick={()=>{setMenu("shop"); setToggle(false)}}>
+          <Link to="/">Shop</Link>
           {menu==="shop"?<hr/>:<></>}
         </li>
 
-        <li onClick={()=>{setMenu("mens")}}>
-          <Link style={{textDecoration: "none"}} to="/mens">Men</Link>
+        <li onClick={()=>{setMenu("mens"); setToggle(false)}}>
+          <Link to="/mens">Men</Link>
           {menu==="mens"?<hr/>:<></>}
         </li>
 
-        <li onClick={()=>{setMenu("womens")}}>
-          <Link style={{textDecoration: "none"}} to="/womens">Women</Link>
+        <li onClick={()=>{setMenu("womens"); setToggle(false)}}>
+          <Link to="/womens">Women</Link>
           {menu==="womens"?<hr/>:<></>}
         </li>
 
-        <li onClick={()=>{setMenu("kids")}}>
-          <Link style={{textDecoration: "none"}} to="/kids">Kids</Link>
+        <li onClick={()=>{setMenu("kids"); setToggle(false)}}>
+          <Link to="/kids">Kids</Link>
           {menu==="kids"?<hr/>:<></>}
         </li>
       </ul>
