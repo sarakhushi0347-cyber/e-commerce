@@ -5,9 +5,10 @@
   gap: 10px;
   padding: 60px 20px;
   background: #f9f9f9;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Heading */
 .popular h1 {
   color: #171717;
   font-size: 40px;
@@ -16,32 +17,34 @@
 }
 
 .popular hr {
-  width: 200px;
+  width: 160px;
   height: 4px;
   border-radius: 10px;
   background: #8a2be2;
   border: none;
 }
 
+/* GRID */
 .popular-container {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Desktop 4 */
+  gap: 25px;
   width: 100%;
   max-width: 1200px;
+  padding: 0 10px;
 }
 
-/* Card Animation */
+/* CARD HOVER */
 .popular-container > * {
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .popular-container > *:hover {
   transform: translateY(-10px);
 }
 
-/* Fade Animation */
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -53,40 +56,57 @@
   }
 }
 
+/* ===================== */
+/* RESPONSIVE BREAKPOINTS */
+/* ===================== */
+
+/* Laptop */
+@media (max-width: 1280px) {
+  .popular-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .popular h1 {
+    font-size: 34px;
+  }
+}
+
 /* Tablet */
 @media (max-width: 1024px) {
   .popular-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
   .popular h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
+  .popular {
+    padding: 50px 15px;
+  }
+
   .popular-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* IMPORTANT: 2 columns */
+    gap: 15px;
   }
 
   .popular h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .popular-container {
-    grid-template-columns: 1fr;
-  }
-
-  .popular {
-    padding: 40px 15px;
+    grid-template-columns: repeat(2, 1fr); /* still 2 columns */
+    gap: 10px;
   }
 
   .popular h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
