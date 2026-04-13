@@ -6,7 +6,8 @@ import Shop from './Pages/Shop.jsx';
 import ShopCategory from './Pages/ShopCategory.jsx';
 import Product from './Pages/Product.jsx';
 import Cart from './Pages/Cart.jsx';
-import LoginSignup from './Pages/LoginSignup.jsx';
+// import LoginSignup from './Pages/LoginSignup.jsx';
+import LoginSignup from "./Pages/LoginSignup";
 import Footer from './Components/Footer/Footer.jsx';
 import men_banner from './Components/assets/banner_men.png' 
 
@@ -28,7 +29,8 @@ function App() {
            <Route path=':productId' element={<Product/>}/>
            </Route>
              <Route path='/cart' element={<Cart/>}/>
-               <Route path='/login' element={<LoginSignup/>}/>
+               {/* <Route path='/login' element={<LoginSignup/>}/> */}
+               <Route path="/login" element={<LoginSignup />} />
       </Routes>
 
        <Footer/>  
